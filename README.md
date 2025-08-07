@@ -1,4 +1,4 @@
-# Firebase_Register_ESP32
+# Firebase_RFID_ESP32
 
 ## 🛠️ Sistema de Leitura de Cartões RFID com ESP32 e Firebase
 
