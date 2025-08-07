@@ -35,31 +35,6 @@ void setLeitura (String PATH, int leitura = 0) {
   Serial.println("Adicionado");
 }
 
-float lerPesoDaBalanca() {
-  String leitura = "";
-  unsigned long inicio = millis();
-
-  while (millis() - inicio < 1000) {
-    while (Serial2.available()) {
-      char c = Serial2.read();
-      if (isPrintable(c)) {
-        leitura += c;
-      }
-    }
-    if (leitura.length() > 5 && leitura.indexOf('.') != -1) {
-      break;
-    }
-  }
-
-  leitura.trim();
-  leitura.replace("kg", "");
-  leitura.replace("+", "");
-  leitura.replace("-", "");
-  leitura.trim();
-
-  return leitura.toFloat();
-}
-
 void setup() {
   Serial.begin(115200);
   Serial.println("Inicializando...");
